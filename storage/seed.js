@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS messages (
     title TEXT,
     body TEXT,
     posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
 
 INSERT INTO users (fName, username, email, hashed_pass, isMember)
 VALUES

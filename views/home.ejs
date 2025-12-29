@@ -18,17 +18,34 @@
                 <div class="isMemberGrids">
                     <% msgs.forEach(message => { %>
                         <div class="individualMsgs" >
-                            <div class="backgroundColor" styles="background: <% msg.color %>">
-                                <div class="title"></div>
-                                <div class="bodyText"></div>
+                            <div class="backgroundColor" styles="background: <%= msg.color %>">
+                                <div class="title"><%= msg.title %></div>
+                                <div class="bodyText"><% msg.body %> </div>
                             </div>
+                            <div class="divider"></div>
+                            <div>
+                                <p><%= msg.fName %></p>
+                                <p>@<%= msg.username %> </p>
+                            </div>
+                            <div><%= msg.posted %></div>
                         </div>
-
                     <% }) %>
-
                 </div>
             <% } else { %>
                 <div class="nonMemberGrids">
+                     <% msgs.forEach(message => { %>
+                        <div class="individualMsgs" >
+                            <div class="backgroundColor" styles="background: <%= msg.color %>">
+                                <div class="title"><%= msg.title %></div>
+                                <div class="bodyText"><% msg.body %> </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div>
+                                <p>anon</p>
+                                <p>login / sign up to view</p>
+                            </div>
+                        </div>
+                    <% }) %>
 
                 </div>
             <% } %>

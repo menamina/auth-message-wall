@@ -16,7 +16,11 @@ async function loginSignUp(req, res) {
 }
 
 async function userLoggedIn(req, res) {
-  const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
+  } catch (error) {
+    throw error;
+  }
 }
 
 module.exports = {

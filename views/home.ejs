@@ -15,6 +15,11 @@
       </nav>
       <div class="mainBody">
             <% if (loggedIn && isMember) { %>
+              <div>
+                <div>
+                  <a>+ new message!</a>
+                </div>
+              </div>
                 <div class="isMemberGrids">
                     <% msgs.forEach(message => { %>
                         <div class="individualMsgs" >
@@ -31,8 +36,29 @@
                         </div>
                     <% }) %>
                 </div>
-            <% } else { %>
+            <% } else if (loggedIn && !isMember) { %>
                 <div class="nonMemberGrids">
+                    <div>
+                      <div>curious about who posted what and when?</div>
+                      <a>become a member!</a>
+                    </div>
+                     <% msgs.forEach(message => { %>
+                        <div class="individualMsgs" >
+                            <div class="backgroundColor" styles="background: <%= msg.color %>">
+                                <div class="title"><%= msg.title %></div>
+                                <div class="bodyText"><% msg.body %> </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div>
+                                <p>anon</p>
+                                <p>login / sign up to view</p>
+                            </div>
+                        </div>
+                    <% }) %>
+
+                </div>
+            <% } else { %>
+              <div class="nonMemberGrids">
                      <% msgs.forEach(message => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" styles="background: <%= msg.color %>">

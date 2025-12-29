@@ -7,14 +7,21 @@ async function homePageView(req, res) {
       msgs,
     });
   } catch (error) {
-    res.send(`Error: ${error.message}`);
+    res.send(`Error Msg: ${error.message}`);
   }
 }
 
-async function validateSignIn() {}
-
 async function loginSignUp(req, res) {
   res.render("login_signup");
+}
+
+async function validateSignIn(req, res) {
+  const { email, password } = req.body;
+  try {
+    const userFound = await db.findUser(email, password);
+  } catch (error) {
+    res.send(`Error Msg: ${error.message}`);
+  }
 }
 
 async function validateSignUp(req, res) {

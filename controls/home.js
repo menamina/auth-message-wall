@@ -7,6 +7,11 @@ async function homePageView(req, res) {
   });
 }
 
+async function loginSignUp(req, res) {
+  res.render("login_signup");
+}
+
 module.exports = {
   homePageView,
+  loginSignUp,
 };

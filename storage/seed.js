@@ -17,7 +17,8 @@ CREATE TABLE IF NOT EXISTS messages (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     title TEXT,
     body TEXT,
-    posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    color TEXT
 );
 
 INSERT INTO users (fName, username, email, hashed_pass, isMember)

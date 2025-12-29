@@ -1,4 +1,30 @@
 <html>
   <head> </head>
-  <body></body>
+  <body>
+    <div class="mainDiv">
+      <!-- ^ column flex -->
+      <nav class="nav">
+        <div>
+          <div>hangOut</div>
+         <% if (loggedIn){ %>
+            <form><button>log out</button></forum>
+         <% } else { %>
+            <a href="/login-signup">Login / Sign up</a>
+         <%  } %>
+        </div>
+      </nav>
+      <div class="mainBody">
+        <div class="msgGridMain">
+            <% if (loggedIn && isMember) { %>
+
+            <% } else { %>
+
+            <% } %>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer"></div>
+      </div>
+    </div>
+  </body>
 </html>

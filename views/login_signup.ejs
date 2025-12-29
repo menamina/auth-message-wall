@@ -2,11 +2,28 @@
   <head> </head>
   <script>
     function showSignUp(){
+      const signUpBtn = document.querySelector(".signUpBtn")
+      signUpBtn.addEventListener('click', function(event){
+        const logInDiv = document.querySelector(".login")
+        const signUpDiv = document.querySelector(".signUp")
+        logInDiv.classList.toggle("hidden");
+        signUpBtn.clasList.toggle("hidden");
+
+
+      })
       
 
     }
 
     function showLogin(){
+      const loginBtn = document.querySelector(".loginShow")
+      loginBtn.addEventListener('click', function(event){
+        const signUpDiv = document.querySelector(".signUpShow")
+        const loginDiv = document.querySelector(".loginShow")
+        signUpDiv.classList.toggle("hidden");
+        loginDiv.clasList.toggle("hidden");
+
+      })
 
     }
   </script>
@@ -31,9 +48,47 @@
 
       <div class="signUp">
         <h1>Don't already have an account?</h1>
-        <button>sign up!</buton>
+        <button class="signUpBtn" onclick="showSignUp()"> sign up!</buton>
       </div>
 
+      <div class="signUpShow">
+        <forum class="signUpForm" action="" method="POST">
+          <div class="signUpDiv">
+            <div class="pSignUp">Sign up</div>
+            <div class="fName-username">
+              <div>
+                <label for="firstName">First name</label>
+                <input name="fName">
+              </div>
+              <div>
+                <label for="username">Username</label>
+                <input name="username">
+              </div>
+            </div>
+            <div clas="email">
+              <label for="email">Email</label>
+              <input name="email" type="email">
+            </div>
+            <div class="password">
+              <div>
+                <label for="password">Password</label>
+                <input name="password">
+              </div>
+              <div>
+                <label>Confirm password</label>
+                <input name="confirmPassword">
+              </div>
+            </div>
+            <div class="signUpBtn">
+              <button>SIGN UP</button>
+            </div>
+          </div>
+        </forum>
+      </div>
+      <div class="loginShow">
+        <h1>Already have an account?</h1>
+        <button onclick="showLogin()">login</button>
+      </div>
       <div class="backgroundColor"></div>
     </div>
   </body>

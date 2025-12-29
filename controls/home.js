@@ -11,20 +11,19 @@ async function homePageView(req, res) {
   }
 }
 
+async function validateSignIn() {}
+
 async function loginSignUp(req, res) {
   res.render("login_signup");
 }
 
-async function userLoggedIn(req, res) {
-  try {
-    const { email, password } = req.body;
-  } catch (error) {
-    throw error;
-  }
+async function validateSignUp(req, res) {
+  const { fname, email, password, confirmPassword } = req.body;
 }
 
 module.exports = {
   homePageView,
   loginSignUp,
-  userLoggedIn,
+  validateSignIn,
+  validateSignUp,
 };

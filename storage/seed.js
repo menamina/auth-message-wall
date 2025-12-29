@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS messages (
     title TEXT,
     body TEXT,
     posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    color TEXT
+    color CHAR(7) DEFAULT '#ffffff'
 );
 
 INSERT INTO users (fName, username, email, hashed_pass, isMember)

@@ -17,9 +17,11 @@
             <% if (loggedIn && isMember) { %>
                 <div class="isMemberGrids">
                     <% msgs.forEach(message => { %>
-                        <div class="individualMsgs">
-                            <div class="title"></div>
-                            <div class="bodyText"></div>
+                        <div class="individualMsgs" >
+                            <div class="backgroundColor" styles="background: <% msg.color %>">
+                                <div class="title"></div>
+                                <div class="bodyText"></div>
+                            </div>
                         </div>
 
                     <% }) %>

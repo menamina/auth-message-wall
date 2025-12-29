@@ -2,31 +2,34 @@
   <head> </head>
   <script>
     function showSignUp(){
-      const signUpBtn = document.querySelector(".signUpBtn")
-      signUpBtn.addEventListener('click', function(event){
         const logInDiv = document.querySelector(".login")
         const signUpDiv = document.querySelector(".signUp")
-        logInDiv.classList.toggle("hidden");
-        signUpBtn.clasList.toggle("hidden");
+        logInDiv.classList.add("hidden");
+        signUpBtn.classList.add("hidden");
 
-
-      })
-      
+        const signupForm = document.querySelector(".signUpShow");
+        const loginPrompt = document.querySelector(".loginShow");
+        signUpForm.classList.remove("hidden");
+        loginPrompt.classList.remove("hidden");
 
     }
 
     function showLogin(){
-      const loginBtn = document.querySelector(".loginShow")
-      loginBtn.addEventListener('click', function(event){
-        const signUpDiv = document.querySelector(".signUpShow")
-        const loginDiv = document.querySelector(".loginShow")
-        signUpDiv.classList.toggle("hidden");
-        loginDiv.clasList.toggle("hidden");
+        const signUpForm = document.querySelector(".signUpShow");
+        const loginPrompt = document.querySelector(".loginShow");
 
-      })
+        signUpForm.classList.add("hidden");
+        loginPrompt.classList.add("hidden");
 
-    }
+        const loginDiv = document.querySelector(".login");
+        const signUpPrompt = document.querySelector(".signUp");
+        loginDiv.classList.remove("hidden");
+        signUpPrompt.classList.remove("hidden");
+        
+      }
   </script>
+
+
   <body>
     <div class="mainDiv">
       <div class="login">
@@ -79,7 +82,7 @@
                 <input name="confirmPassword">
               </div>
             </div>
-            <div class="signUpBtn">
+            <div>
               <button>SIGN UP</button>
             </div>
           </div>

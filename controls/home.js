@@ -1,4 +1,4 @@
-const db = require("../storage/pool");
+const db = require("../storage/queries");
 
 async function homePageView(req, res) {
   const msgs = await db.getMsgs();
@@ -6,3 +6,7 @@ async function homePageView(req, res) {
     msgs,
   });
 }
+
+module.exports = {
+  homePageView,
+};

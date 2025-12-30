@@ -7,28 +7,30 @@ const pool = require("../storage/pool");
 //     passwordField = 'pw'
 // }
 
-function verifyCB(username, password, done){
-    UserActivation.findOne({username: username}).then((user) => {
-        if (!user){
-            return ClientBase(null, false)
-        }
+function verifyCB(username, password, done) {
+  UserActivation.findOne({ username: username })
+    .then((user) => {
+      if (!user) {
+        return done(null, false);
+      }
 
-        const isValid = validPassword(password, user.hash, user.salt)
-        if (isValid){
-            return done(null, user)
-        } else {
-            return done(null, false)
-        }
-    }).catch(err){
-        done(err)
-    }
+      const isValid = validPassword(password, user.hash, user.salt);
+      if (isValid) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+      }
+    })
+    .catch((err) => {
+      done(err);
+    });
 }
 
 const strategy = new LocalStrategy(verifyCB);
 
 passport.serializeUser((userID, done) => {
-    done(null, userID)
-})
+  done(null, userID);
+});
 
 passport.deserializeUser((userID, done) => {
   User.findById(userID)

@@ -1,4 +1,4 @@
-require(dotenv).config();
+require("dotenv").config();
 const express = require("express");
 const server = express();
 const path = require("node:path");
@@ -7,8 +7,8 @@ const port = process.env.PORT || 5555;
 
 const session = require("express-session");
 const pgSession = require("connect-pg-simple")(session);
-const passport = require("/passport/passport");
-const pool = require("../storage/pool");
+const passport = require("./passport/passport");
+const pool = require("./storage/pool");
 
 server.set("view engine", "ejs");
 server.set("views", path.join(__dirname, "views"));

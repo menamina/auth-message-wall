@@ -15,4 +15,16 @@ const validateSignUp = [
   body("password")
     .isLength({ min: 8 })
     .withMessage("password must be at least 8 characters"),
+
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.render("login_signup", {
+        errors: errors.array(),
+      });
+    }
+    next();
+  },
 ];
+
+module.exports = validateSignUp;

@@ -15,9 +15,10 @@ async function loginSignUp(req, res) {
   res.render("login_signup");
 }
 
+async function signUpController(req, res) {}
+
 module.exports = {
   homePageView,
   loginSignUp,
-  validateSignIn,
-  validateSignUp,
+  signUpController,
 };

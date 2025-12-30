@@ -1,6 +1,7 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const pool = require("../storage/pool");
+const validatePassword = require("../middleware/passwordUtil");
+const db = require("../storage/queries");
 
 // const customFields = {
 //     usernameField: 'uname',
@@ -8,18 +9,16 @@ const pool = require("../storage/pool");
 // }
 
 function verifyCB(username, password, done) {
-  UserActivation.findOne({ username: username })
+  db.findUserByUsername(username)
     .then((user) => {
       if (!user) {
         return done(null, false);
       }
-
-      const isValid = validPassword(password, user.hash, user.salt);
-      if (isValid) {
-        return done(null, user);
-      } else {
+      const isValid = validatePassword(password, user.hash, user.salt);
+      if (!isValid) {
         return done(null, false);
       }
+      return done(null, user);
     })
     .catch((err) => {
       done(err);
@@ -28,18 +27,14 @@ function verifyCB(username, password, done) {
 
 const strategy = new LocalStrategy(verifyCB);
 
-passport.serializeUser((userID, done) => {
-  done(null, userID);
+passport.serializeUser((user, done) => {
+  done(null, user.id);
 });
 
-passport.deserializeUser((userID, done) => {
-  User.findById(userID)
-    .then((user) => {
-      done(null, user);
-    })
-    .catch((err) => {
-      done(err);
-    });
+passport.deserializeUser((id, done) => {
+  db.findUserByID(id)
+    .then((user) => done(null, user))
+    .catch((err) => done(err));
 });
 passport.use(strategy);
 

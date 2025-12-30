@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS users (
     fName TEXT NOT NULL,
     username TEXT NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,
-    hashed_pass TEXT NOT NULL,
+    hash TEXT NOT NULL,
+    salt TEXT NOT NULL
     isMember BOOLEAN DEFAULT FALSE
 
 );

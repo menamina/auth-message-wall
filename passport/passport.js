@@ -1,6 +1,6 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const validatePassword = require("../middleware/passwordUtil");
+const { validatePassword } = require("../middleware/passwordUtil");
 const db = require("../storage/queries");
 
 // const customFields = {

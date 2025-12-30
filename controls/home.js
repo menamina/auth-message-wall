@@ -1,8 +1,5 @@
 const db = require("../storage/queries");
-const {
-  generatePassword,
-  validatePassword,
-} = require("../middleware/passwordUtil");
+const { generatePassword } = require("../middleware/passwordUtil");
 
 async function homePageView(req, res) {
   try {
@@ -24,11 +21,16 @@ async function signUpController(req, res) {
   try {
     const { hash, salt } = generatePassword(password);
     await db.addUser({
-      fName, username, email, hash: hash, salt: salt, false
+      fName,
+      username,
+      email,
+      hash: hash,
+      salt: salt,
+      isMember: false,
     });
-    res.redirect("login_signup")
-  } catch(error){
-    throw error
+    res.redirect("login_signup");
+  } catch (error) {
+    throw error;
   }
 }
 

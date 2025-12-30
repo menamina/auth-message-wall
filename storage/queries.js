@@ -11,6 +11,8 @@ async function getMsgs() {
   }
 }
 
+async function addUser(fName, username, email, hash, salt, isMember) {}
+
 async function findUserByUsername(username) {
   const { rows } = await pool.query("SELECT * FROM users WHERE username = $1", [
     username,
@@ -25,6 +27,7 @@ async function findUserByID(id) {
 
 module.exports = {
   getMsgs,
+  addUser,
   findUserByUsername,
   findUserByID,
 };

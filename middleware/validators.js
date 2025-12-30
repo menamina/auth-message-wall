@@ -16,6 +16,13 @@ const validateSignUp = [
     .isLength({ min: 8 })
     .withMessage("password must be at least 8 characters"),
 
+  body("confirmPassword").custom((value, { req }) => {
+    if (value !== req.body.password) {
+      throw new Error("passwords must be the same");
+    }
+    return true;
+  }),
+
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {

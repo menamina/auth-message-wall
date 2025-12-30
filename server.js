@@ -7,6 +7,7 @@ const port = process.env.PORT || 5555;
 
 const session = require("express-session");
 const pgSession = require("connect-pg-simple")(session);
+const passport = require("/passport/passport");
 const pool = require("../storage/pool");
 
 server.set("view engine", "ejs");
@@ -28,6 +29,7 @@ server.use(
   })
 );
 
+server.use(passport.initialize());
 server.use(passport.session());
 
 // routes

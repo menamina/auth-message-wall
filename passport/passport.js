@@ -19,14 +19,26 @@ function verifyCB(username, password, done){
         } else {
             return done(null, false)
         }
-    }).catch(err) {
+    }).catch(err){
         done(err)
     }
 }
 
-const strategy = newLocalStrategy();
+const strategy = new LocalStrategy(verifyCB);
 
+passport.serializeUser((userID, done) => {
+    done(null, userID)
+})
 
-passport.use(new LocalStrategy(
-    function(username)
-));
+passport.deserializeUser((userID, done) => {
+  User.findById(userID)
+    .then((user) => {
+      done(null, user);
+    })
+    .catch((err) => {
+      done(err);
+    });
+});
+passport.use(strategy);
+
+module.exports = passport;

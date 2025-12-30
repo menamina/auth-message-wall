@@ -19,6 +19,9 @@ async function validateSignIn(req, res) {
   const { email, password } = req.body;
   try {
     const userFound = await db.findUser(email, password);
+    if (userFound) {
+      res.render;
+    }
   } catch (error) {
     res.send(`Error Msg: ${error.message}`);
   }

@@ -1,6 +1,6 @@
 const { body, validationResult } = require("express-validator");
 
-const validateSignIn = [
+const validateSignUp = [
   body("fName").trim().notEmpty().withMessage("name cannot be empty"),
 
   body("username")

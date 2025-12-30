@@ -32,6 +32,12 @@ server.use(
 server.use(passport.initialize());
 server.use(passport.session());
 
+server.use((req, res, next) => {
+  res.locals.loggedIn = req.isAuthenticated();
+  res.locals.isMember = req.user?.isMember ?? false;
+  next();
+});
+
 // routes
 
 server.use("/", router);

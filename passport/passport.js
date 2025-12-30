@@ -1,0 +1,5 @@
+const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const pool = require("../storage/pool");
+
+passport.use();

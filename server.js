@@ -1,3 +1,4 @@
+require(dotenv).config();
 const express = require("express");
 const server = express();
 const path = require("node:path");
@@ -6,9 +7,7 @@ const port = process.env.PORT || 5555;
 
 const session = require("express-session");
 const pgSession = require("connect-pg-simple")(session);
-const pool = requite("../storage/pool");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+const pool = require("../storage/pool");
 
 server.set("view engine", "ejs");
 server.set("views", path.join(__dirname, "views"));
@@ -16,7 +15,7 @@ server.use(express.urlencoded({ extended: true }));
 
 // session set up
 
-app.use(
+server.use(
   session({
     store: new pgSession({
       pool: pool,

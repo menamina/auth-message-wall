@@ -10,3 +10,7 @@ async function getMsgs() {
     throw error;
   }
 }
+
+module.exports = {
+  getMsgs,
+};

@@ -34,7 +34,7 @@ server.use(passport.session());
 
 server.use((req, res, next) => {
   res.locals.loggedIn = req.isAuthenticated();
-  res.locals.isMember = req.user?.isMember ?? false;
+  res.locals.isMember = req.user.isMember;
   next();
 });
 

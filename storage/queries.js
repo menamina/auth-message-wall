@@ -57,5 +57,5 @@ module.exports = {
   addUser,
   updateUser,
   findUserByEmail,
-  findUserByID,
+  // findUserByID,
 };

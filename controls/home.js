@@ -3,7 +3,7 @@ const { generatePassword } = require("../middleware/passwordUtil");
 
 async function homePageView(req, res) {
   try {
-    const msgs = await db.getMsgs;
+    const msgs = await db.getMsgs();
     res.render("home", {
       msgs,
       user: req.user ? req.user : null,
@@ -31,7 +31,7 @@ async function signUpController(req, res) {
     });
     res.redirect("login_signup");
   } catch (error) {
-    throw error;
+    res.send(`Error Msg: ${error.message}`);
   }
 }
 

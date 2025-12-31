@@ -4,10 +4,9 @@ const { generatePassword } = require("../middleware/passwordUtil");
 async function homePageView(req, res) {
   try {
     const msgs = await db.getMsgs;
-    const user = await db.findUserByEmail(req.user.email);
-    res.render("/home", {
+    res.render("home", {
       msgs,
-      user,
+      user: req.user ? req.user : null,
     });
   } catch (error) {
     res.send(`Error Msg: ${error.message}`);
@@ -15,7 +14,7 @@ async function homePageView(req, res) {
 }
 
 async function loginSignUp(req, res) {
-  res.render("/login_signup");
+  res.render("login_signup");
 }
 
 async function signUpController(req, res) {
@@ -30,14 +29,14 @@ async function signUpController(req, res) {
       salt: salt,
       isMember: false,
     });
-    res.redirect("/login_signup");
+    res.redirect("login_signup");
   } catch (error) {
     throw error;
   }
 }
 
 function getMembershipView(req, res) {
-  res.render("/memebership");
+  res.render("memebership");
 }
 
 async function updateMembership(req, res) {
@@ -45,14 +44,15 @@ async function updateMembership(req, res) {
     await db.updateMembership(req.user.id);
     res.redirect("/home");
   } catch (err) {
-    res.render("/memebrship", {
+    res.render("memebrship", {
       error: err.message,
     });
   }
 }
 
 function getNewMsgView(req, res) {
-  res.render("/newMsg");
+  const username = req.username;
+  res.render("newMsg", { username });
 }
 
 async function addNewMsg(req, res) {}

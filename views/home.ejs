@@ -34,11 +34,11 @@
       <div class="mainBody">
             <% if (loggedIn && isMember) { %>
                 <div class="isMemberGrids">
-                    <% msgs.forEach(message => { %>
+                    <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" styles="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
-                                <div class="bodyText"><% msg.body %> </div>
+                                <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>
                             <div>
@@ -60,11 +60,11 @@
                         <a>+ new message!</a>
                       </div>
                     </div>
-                     <% msgs.forEach(message => { %>
+                     <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" styles="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
-                                <div class="bodyText"><% msg.body %> </div>
+                                <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>
                             <div>
@@ -77,11 +77,11 @@
                 </div>
             <% } else { %>
               <div class="nonMemberGrids">
-                     <% msgs.forEach(message => { %>
+                     <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" styles="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
-                                <div class="bodyText"><% msg.body %> </div>
+                                <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>
                             <div>

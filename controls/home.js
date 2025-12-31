@@ -36,6 +36,10 @@ async function signUpController(req, res) {
   }
 }
 
+function getMembershipView(req, res) {
+  res.render("/memebership");
+}
+
 async function updateMembership(req, res) {
   try {
     await db.updateMembership(req.user.id);
@@ -47,9 +51,18 @@ async function updateMembership(req, res) {
   }
 }
 
+function getNewMsgView(req, res) {
+  res.render("/newMsg");
+}
+
+async function addNewMsg(req, res) {}
+
 module.exports = {
   homePageView,
   loginSignUp,
   signUpController,
+  getMembershipView,
   updateMembership,
+  getNewMsgView,
+  addNewMsg,
 };

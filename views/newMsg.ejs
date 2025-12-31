@@ -1,4 +1,30 @@
 <html>
   <head> </head>
-  <body></body>
+  <body>
+    <div class="mainDiv">
+      <% if (!loggedIn){ %>
+      <div>whomp you must login to add a post</div>
+      <a href="/login_signup">login or sign up</a>
+      <% } else { %>
+      <div>
+        <div>new msg!</div>
+        <forum class="newMsgForum" action="/new-message" method="POST">
+          <div></div>
+          <div>
+            <label for="title" hidden></label>
+            <input name="title" placeholder="title" />
+          </div>
+          <div>
+            <label for="body" hidden></label>
+            <input
+              name="body"
+              placeholder="what would you like to say to the world?"
+            />
+          </div>
+          <button>publish</button>
+        </forum>
+      </div>
+      <%}%>
+    </div>
+  </body>
 </html>

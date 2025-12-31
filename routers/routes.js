@@ -25,6 +25,10 @@ router.post("/logout", (req, res, next) => {
   });
 });
 
+router.get("/membership", home.getMembershipView);
 router.post("/membership", home.updateMembership);
+
+router.get("/new-message", home.getNewMsgView);
+router.post("/new-message", home.addNewMsg);
 
 module.exports = router;

@@ -1,5 +1,7 @@
 <html>
-  <head> </head>
+  <head> 
+    <link rel="stylesheet" href="../css/home.css">
+  </head>
   <body>
     <div class="mainDiv">
       <!-- ^ column flex -->
@@ -73,9 +75,8 @@
                             </div>
                         </div>
                     <% }) %>
-
                 </div>
-            <% } else { %>
+            <% } else if (!loggedIn && !isMember) { %>
               <div class="nonMemberGrids">
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >

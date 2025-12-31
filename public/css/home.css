@@ -10,7 +10,8 @@
 }
 
 .mainDiv,
-.nav {
+.nav,
+.underTitle {
   display: flex;
 }
 
@@ -24,6 +25,13 @@
   align-items: center;
 }
 
+.nav,
+.underTitle {
+  width: 100%;
+}
+
 .titleDivider {
-  height: 400px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
 }

@@ -25,7 +25,7 @@ async function addUser(fName, username, email, hash, salt, isMember) {
 async function findUserByEmail(email) {
   try {
     const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
-      [email],
+      email,
     ]);
     return rows[0];
   } catch (error) {
@@ -40,11 +40,11 @@ async function findUserByID(id) {
 
 async function updateMembership(userID) {
   try {
-    const { rows } = await pool.query(
+    const { canUpdate } = await pool.query(
       "UPDATE users SET isMember = true WHERE id = $1",
       [userID]
     );
-    if (rows.rowCount === 0) {
+    if (canUpdate.rowCount === 0) {
       throw new Error("cant find user");
     }
   } catch (err) {

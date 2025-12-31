@@ -36,7 +36,7 @@ async function signUpController(req, res) {
   }
 }
 
-async function updateMembership() {
+async function updateMembership(req, res) {
   try {
     await db.updateMembership(req.user.id);
     res.redirect("/home");

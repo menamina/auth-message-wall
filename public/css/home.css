@@ -11,8 +11,16 @@
 
 .mainDiv,
 .nav,
-.underTitle {
+.underTitle,
+.mainBody {
   display: flex;
+}
+
+.nonMemberGrids {
+  display: grid;
+  grid-template-columns: repeat(5, 345px);
+  grid-template-rows: repeat(3, 250px);
+  gap: 12px;
 }
 
 .mainDiv,
@@ -20,7 +28,8 @@
   flex-direction: column;
 }
 
-.nav {
+.nav,
+.mainBody {
   justify-content: center;
   align-items: center;
 }
@@ -30,8 +39,25 @@
   width: 100%;
 }
 
+.nav {
+  height: 125px;
+}
+
 .titleDivider {
-  height: 100px;
-  line-height: 100px;
   text-align: center;
+  height: 70%;
+}
+
+.underTitle {
+  height: 30%;
+}
+
+.individualMsgs {
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 5%;
+}
+
+.backgroundColor {
+  height: 80%;
+  border-radius: 5%;
 }

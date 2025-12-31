@@ -5,7 +5,7 @@ async function homePageView(req, res) {
   try {
     const msgs = await db.getMsgs;
     const user = await db.findUserByEmail(req.user.email);
-    res.render("home", {
+    res.render("/home", {
       msgs,
       user,
     });
@@ -15,7 +15,7 @@ async function homePageView(req, res) {
 }
 
 async function loginSignUp(req, res) {
-  res.render("login_signup");
+  res.render("/login_signup");
 }
 
 async function signUpController(req, res) {
@@ -30,7 +30,7 @@ async function signUpController(req, res) {
       salt: salt,
       isMember: false,
     });
-    res.redirect("login_signup");
+    res.redirect("/login_signup");
   } catch (error) {
     throw error;
   }
@@ -38,9 +38,8 @@ async function signUpController(req, res) {
 
 async function updateMembership() {
   try {
-    const userID = await db.findUserByID(req.user.id);
-    await db.updateMembership(userID);
-    res.redirect("home");
+    await db.updateMembership(req.user.id);
+    res.redirect("/home");
   } catch (err) {
     res.render("/memebrship", {
       error: err.message,

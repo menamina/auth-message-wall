@@ -8,6 +8,11 @@
         <div>
           <div>Membership</div>
         </div>
+        <% if (error) { %>
+        <div class="error">
+          <div><%= error %></div>
+        </div>
+        <% } %>
         <div>
           <div>
             <div>Free</div>

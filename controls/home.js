@@ -36,8 +36,21 @@ async function signUpController(req, res) {
   }
 }
 
+async function updateMembership() {
+  try {
+    const userID = await db.findUserByID(req.user.id);
+    await db.updateMembership(userID);
+    res.redirect("home");
+  } catch (err) {
+    res.render("/memebrship", {
+      error: err.message,
+    });
+  }
+}
+
 module.exports = {
   homePageView,
   loginSignUp,
   signUpController,
+  updateMembership,
 };

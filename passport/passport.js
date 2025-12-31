@@ -20,8 +20,7 @@ function verifyCB(email, password, done) {
     });
 }
 
-const strategy = new LocalStrategy(verifyCB);
-
+const strategy = new LocalStrategy({ usernameField: "email" }, verifyCB);
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });

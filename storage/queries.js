@@ -33,16 +33,16 @@ async function findUserByEmail(email) {
   }
 }
 
-// async function findUserByID(id) {
-//   const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
-//   return rows[0];
-// }
+async function findUserByID(id) {
+  const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+  return rows[0];
+}
 
-async function updateUser(username) {
+async function updateMembership(userID) {
   try {
     const { rows } = await pool.query(
-      "UPDATE secret_society SET isMember = TRUE WHERE username = $1",
-      [username]
+      "UPDATE users SET isMember = true WHERE id = $1",
+      [userID]
     );
     if (rows.rowCount === 0) {
       throw new Error("cant find user");
@@ -55,7 +55,7 @@ async function updateUser(username) {
 module.exports = {
   getMsgs,
   addUser,
-  updateUser,
+  updateMembership,
   findUserByEmail,
-  // findUserByID,
+  findUserByID,
 };

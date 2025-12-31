@@ -24,4 +24,7 @@ router.post("/logout", (req, res, next) => {
     res.redirect("/");
   });
 });
+
+router.post("/membership", home.updateMembership);
+
 module.exports = router;

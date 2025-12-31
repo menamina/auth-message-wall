@@ -13,14 +13,10 @@ async function getMsgs() {
 
 async function addUser(fName, username, email, hash, salt, isMember) {
   try {
-    await pool.query("INSERT INTO users VALUES ($1, $2, $3, $4, $5, $6)", [
-      fName,
-      username,
-      email,
-      hash,
-      salt,
-      isMember,
-    ]);
+    await pool.query(
+      "INSERT INTO users (fName, username, email, hash, salt, isMember) VALUES ($1, $2, $3, $4, $5, $6)",
+      [fName, username, email, hash, salt, isMember]
+    );
   } catch (error) {
     throw error;
   }
@@ -37,10 +33,10 @@ async function findUserByEmail(email) {
   }
 }
 
-async function findUserByID(id) {
-  const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
-  return rows[0];
-}
+// async function findUserByID(id) {
+//   const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
+//   return rows[0];
+// }
 
 async function updateUser(username) {
   try {

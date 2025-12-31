@@ -3,11 +3,6 @@ const LocalStrategy = require("passport-local").Strategy;
 const { validatePassword } = require("../middleware/passwordUtil");
 const db = require("../storage/queries");
 
-// const customFields = {
-//     usernameField: 'uname',
-//     passwordField = 'pw'
-// }
-
 function verifyCB(email, password, done) {
   db.findUserByEmail(email)
     .then((user) => {

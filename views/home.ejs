@@ -4,22 +4,35 @@
     <div class="mainDiv">
       <!-- ^ column flex -->
       <nav class="nav">
-        <div>
-          <div>hangOut</div>
-         <% if (loggedIn){ %>
-            <form action="/logout" method="POST"><button>log out</button></forum>
-         <% } else { %>
-            <a href="/login-signup">Login / Sign up</a>
-         <%  } %>
+        <div class="titleDivider">
+          <div>hangout</div>
+          <p>blurb</p>
         </div>
+        <div>
+         <% if (loggedIn && isMember){ %>
+          <div>
+            <div>hi, <%= user.fName %> </div>
+            <form action="/logout" method="POST"><button>log out</button></forum>
+          </div>
+          <div>
+            <a href="/new-message">add a message</a>
+          </div>
+         <% } else if (loggedIn && !isMember) { %>
+            <div>
+              <div>hi, <%= user.fName %> </div>
+              <div><a href="/membership">become a member</a></div>
+              <form action="/logout" method="POST"><button>log out</button></forum>
+            </div>
+         <%  }  else { %>
+          <div>
+            <div>welcome</div>
+            <a href="/login-signup">Login / Sign up</a>
+          </div>
+         <% } %>
+        <div>
       </nav>
       <div class="mainBody">
             <% if (loggedIn && isMember) { %>
-              <div>
-                <div>
-                  <a>+ new message!</a>
-                </div>
-              </div>
                 <div class="isMemberGrids">
                     <% msgs.forEach(message => { %>
                         <div class="individualMsgs" >
@@ -41,6 +54,11 @@
                     <div>
                       <div>curious about who posted what and when?</div>
                       <a>become a member!</a>
+                    </div>
+                    <div>
+                      <div>
+                        <a>+ new message!</a>
+                      </div>
                     </div>
                      <% msgs.forEach(message => { %>
                         <div class="individualMsgs" >

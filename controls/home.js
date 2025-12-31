@@ -4,8 +4,10 @@ const { generatePassword } = require("../middleware/passwordUtil");
 async function homePageView(req, res) {
   try {
     const msgs = await db.getMsgs;
+    const user = await db.findUserByEmail(req.user.email);
     res.render("home", {
       msgs,
+      user,
     });
   } catch (error) {
     res.send(`Error Msg: ${error.message}`);

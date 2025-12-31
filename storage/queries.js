@@ -11,13 +11,30 @@ async function getMsgs() {
   }
 }
 
-async function addUser(fName, username, email, hash, salt, isMember) {}
+async function addUser(fName, username, email, hash, salt, isMember) {
+  try {
+    await pool.query("INSERT INTO users VALUES ($1, $2, $3, $4, $5, $6)", [
+      fName,
+      username,
+      email,
+      hash,
+      salt,
+      isMember,
+    ]);
+  } catch (error) {
+    throw error;
+  }
+}
 
-async function findUserByUsername(username) {
-  const { rows } = await pool.query("SELECT * FROM users WHERE username = $1", [
-    username,
-  ]);
-  return rows[0];
+async function findUserByEmail(email) {
+  try {
+    const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
+      [email],
+    ]);
+    return rows[0];
+  } catch (error) {
+    throw error;
+  }
 }
 
 async function findUserByID(id) {
@@ -25,9 +42,24 @@ async function findUserByID(id) {
   return rows[0];
 }
 
+async function updateUser(username) {
+  try {
+    const { rows } = await pool.query(
+      "UPDATE secret_society SET isMember = TRUE WHERE username = $1",
+      [username]
+    );
+    if (rows.rowCount === 0) {
+      throw new Error("cant find user");
+    }
+  } catch (err) {
+    throw err;
+  }
+}
+
 module.exports = {
   getMsgs,
   addUser,
-  findUserByUsername,
+  updateUser,
+  findUserByEmail,
   findUserByID,
 };

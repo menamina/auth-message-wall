@@ -7,7 +7,7 @@
         <div>
           <div>hangOut</div>
          <% if (loggedIn){ %>
-            <form><button>log out</button></forum>
+            <form action="/logout" method="POST"><button>log out</button></forum>
          <% } else { %>
             <a href="/login-signup">Login / Sign up</a>
          <%  } %>

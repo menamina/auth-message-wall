@@ -8,8 +8,8 @@ const db = require("../storage/queries");
 //     passwordField = 'pw'
 // }
 
-function verifyCB(username, password, done) {
-  db.findUserByUsername(username)
+function verifyCB(email, password, done) {
+  db.findUserByEmail(email)
     .then((user) => {
       if (!user) {
         return done(null, false);

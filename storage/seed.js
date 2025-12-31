@@ -22,14 +22,24 @@ CREATE TABLE IF NOT EXISTS messages (
     color CHAR(7) DEFAULT '#ffffff'
 );
 
-INSERT INTO users (fName, username, email, hashed_pass, isMember)
+INSERT INTO users (fName, username, email, hash, salt, isMember)
 VALUES
-    ('Mena', 'carrot', 'odin@project.com', 'abc-123-hash', TRUE),
-    ('L''oreal', 'redditlover', 'odin1@project.com', 'abc-123-hash', TRUE),
-    ('Adonis', 'adonnie', 'odin2@project.com', 'abc-123-hash', TRUE),
-    ('Armani', 'a-man', 'odin3@project.com', 'abc-123-hash', TRUE),
-    ('Paris', 'baguette', 'odin4@project.com', 'abc-123-hash', TRUE),
-    ('Dakota', 'browniesRgood', 'odin5@project.com', 'abc-123-hash', TRUE);
+    ('Mena', 'carrot', 'odin@project.com', 'abc-123-hash', '123', TRUE),
+    ('L''oreal', 'redditlover', 'odin1@project.com', 'abc-123-hash', '123', TRUE),
+    ('Adonis', 'adonnie', 'odin2@project.com', 'abc-123-hash', '123', TRUE),
+    ('Armani', 'a-man', 'odin3@project.com', 'abc-123-hash', '123', TRUE),
+    ('Paris', 'baguette', 'odin4@project.com', 'abc-123-hash', '123', TRUE),
+    ('Dakota', 'browniesRgood', 'odin5@project.com', 'abc-123-hash', '123', TRUE);
+
+INSERT INTO messages (user_id, title, body, color)
+VALUES
+    (1, 'remember...', 'fake news fake news', '#ffd6e0'),
+    (2, 'that..', 'fake news fake news', '#cdb4db'),
+    (3, 'u..', 'fake news fake news', '#bde0fe');
+    (4, 'r..', 'fake news fake news', '#bde0fe');
+    (5, 'v..', 'fake news fake news', '#bde0fe');
+    (6, 'cool', 'fake news fake news', '#bde0fe');
+`;
 
 `;
 

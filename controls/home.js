@@ -9,7 +9,7 @@ async function homePageView(req, res) {
       user: req.user ? req.user : null,
     });
   } catch (error) {
-    res.send(`Error Msg: ${error.message}`);
+    res.send(error.message);
   }
 }
 
@@ -43,9 +43,9 @@ async function updateMembership(req, res) {
   try {
     await db.updateMembership(req.user.id);
     res.redirect("/home");
-  } catch (err) {
+  } catch (error) {
     res.render("memebrship", {
-      error: err.message,
+      error: error.message,
     });
   }
 }

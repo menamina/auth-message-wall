@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS messages (
     title TEXT,
     body TEXT,
     posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    color CHAR(7) DEFAULT '#ffffff'
+    color TEXT NOT NULL
 );
 
 INSERT INTO users (fName, username, email, hash, salt, isMember)
@@ -33,14 +33,12 @@ VALUES
 
 INSERT INTO messages (user_id, title, body, color)
 VALUES
-    (1, 'remember...', 'fake news fake news', '#ffd6e0'),
-    (2, 'that..', 'fake news fake news', '#cdb4db'),
-    (3, 'u..', 'fake news fake news', '#bde0fe');
-    (4, 'r..', 'fake news fake news', '#bde0fe');
-    (5, 'v..', 'fake news fake news', '#bde0fe');
-    (6, 'cool', 'fake news fake news', '#bde0fe');
-`;
-
+    (1, 'remember...', 'fake news fake news', '#bcceffff'),
+    (2, 'that..', 'fake news fake news', '#ffe7bcff'),
+    (3, 'u..', 'fake news fake news', '#bdfdfeff'),
+    (4, 'r..', 'fake news fake news', '#ffd4dbff'),
+    (5, 'v..', 'fake news fake news', '#e3bdfeff'),
+    (6, 'cool', 'fake news fake news', '#87f0bfff');
 `;
 
 async function run() {

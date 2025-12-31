@@ -13,7 +13,7 @@ async function getMsgs() {
 
 async function addUser(fName, username, email, hash, salt, isMember) {
   try {
-    await pool.query(
+    await db.query(
       "INSERT INTO users (fName, username, email, hash, salt, isMember) VALUES ($1, $2, $3, $4, $5, $6)",
       [fName, username, email, hash, salt, isMember]
     );
@@ -24,7 +24,7 @@ async function addUser(fName, username, email, hash, salt, isMember) {
 
 async function findUserByEmail(email) {
   try {
-    const { rows } = await pool.query("SELECT * FROM users WHERE email = $1", [
+    const { rows } = await db.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
     return rows[0];
@@ -37,9 +37,7 @@ async function findUserByEmail(email) {
 
 async function findUserByID(id) {
   try {
-    const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [
-      id,
-    ]);
+    const { rows } = await db.query("SELECT * FROM users WHERE id = $1", [id]);
     return rows[0];
   } catch (error) {
     throw new Error(`sql err in findUserByID() query w msg: ${error.message}`);
@@ -48,7 +46,7 @@ async function findUserByID(id) {
 
 async function updateMembership(userID) {
   try {
-    const { canUpdate } = await pool.query(
+    const { canUpdate } = await db.query(
       "UPDATE users SET isMember = true WHERE id = $1",
       [userID]
     );

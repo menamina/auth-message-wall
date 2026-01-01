@@ -59,7 +59,7 @@ form {
 }
 
 .form,
-.signUpForm {
+.signUpDiv {
   width: 370px;
 }
 
@@ -72,9 +72,9 @@ input:focus {
   outline: 2px solid rgb(68, 43, 119);
 }
 
+.name,
 .email,
 .password,
-.name,
 .confirmPassword,
 .username {
   border: none;
@@ -89,7 +89,9 @@ input:focus {
 }
 
 .btn.log,
-.btn.sign {
+.btn.sign,
+.loginBtnFromSignUp,
+.registerBtn {
   height: 40px;
   border-radius: 20px;
   width: 150px;
@@ -98,12 +100,14 @@ input:focus {
   cursor: pointer;
 }
 
-.btn.log {
+.btn.log,
+.registerBtn {
   background-color: rgb(195, 193, 248);
   margin-top: 20px;
 }
 
-.dontAlrd {
+.dontAlrd,
+.alrdHave {
   padding-bottom: 130px;
 }
 

@@ -106,6 +106,10 @@
       const loginPrompt = document.querySelector(".loginShow");
       signUpForm.classList.remove("hidden");
       loginPrompt.classList.remove("hidden");
+
+      const backgroundColor = document.querySelector(".backgroundColor");
+      backgroundColor.classList.add("slideLeft");
+      backgroundColor.classList.remove("slideRight");
     }
 
     function showLogin() {
@@ -119,6 +123,10 @@
       const signUpPrompt = document.querySelector(".signUp");
       loginDiv.classList.remove("hidden");
       signUpPrompt.classList.remove("hidden");
+
+      const backgroundColor = document.querySelector(".backgroundColor");
+      backgroundColor.classList.remove("slideLeft");
+      backgroundColor.classList.add("slideRight");
     }
   </script>
 </html>

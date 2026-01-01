@@ -9,10 +9,77 @@
   width: 100vw;
 }
 
-.mainDiv {
+.mainDiv,
+.login,
+.signUp,
+form {
   display: flex;
+}
+
+.login,
+.signUp,
+form {
+  flex-direction: column;
 }
 
 .hidden {
   display: none;
+}
+
+.login,
+.signUp {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login,
+.signUp,
+.signUpShow,
+.loginShow {
+  width: 100%;
+}
+
+.signUp {
+  background-color: rgb(195, 193, 248);
+}
+
+.form {
+  width: 370px;
+}
+
+form {
+  gap: 13px;
+}
+
+input:focus {
+  outline: 2px solid rgb(68, 43, 119);
+}
+
+.email,
+.password {
+  border: none;
+  height: 50px;
+  background-color: rgb(227, 227, 227);
+  padding-left: 10px;
+}
+
+.forgotPass {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.btn.sign {
+  height: 40px;
+  border-radius: 20px;
+  width: 150px;
+  align-self: center;
+  border: none;
+  background-color: rgb(195, 193, 248);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.welcome {
+  height: 100px;
 }

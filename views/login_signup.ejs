@@ -1,41 +1,13 @@
 <html>
-  <head> </head>
-  <script>
-    function showSignUp(){
-        const logInDiv = document.querySelector(".login")
-        const signUpDiv = document.querySelector(".signUp")
-        logInDiv.classList.add("hidden");
-        signUpDiv.classList.add("hidden");
-
-        const signupForm = document.querySelector(".signUpShow");
-        const loginPrompt = document.querySelector(".loginShow");
-        signUpForm.classList.remove("hidden");
-        loginPrompt.classList.remove("hidden");
-
-    }
-
-    function showLogin(){
-        const signUpForm = document.querySelector(".signUpShow");
-        const loginPrompt = document.querySelector(".loginShow");
-
-        signUpForm.classList.add("hidden");
-        loginPrompt.classList.add("hidden");
-
-        const loginDiv = document.querySelector(".login");
-        const signUpPrompt = document.querySelector(".signUp");
-        loginDiv.classList.remove("hidden");
-        signUpPrompt.classList.remove("hidden");
-
-      }
-  </script>
-
-
+  <head>
+    <link rel="stylesheet" href="../css/loginSignup.css" />
+  </head>
   <body>
     <div class="mainDiv">
       <div class="login">
         <h1>welcome back</h1>
         <div>
-          <forum action="/login" method="POST">
+          <form action="/login" method="POST">
             <input name="email" type="email" required placeholder="email" />
             <input
               name="password"
@@ -45,54 +17,83 @@
             />
             <div>Forgot your password?</div>
             <button>LOGIN</button>
-          </forum>
+          </form>
         </div>
       </div>
 
       <div class="signUp">
         <h1>Don't already have an account?</h1>
-        <button class="signUpBtn" onclick="showSignUp()"> sign up!</buton>
+        <button type="button" class="signUpBtn" onclick="showSignUp()">
+          sign up!
+        </button>
       </div>
 
-      <div class="signUpShow">
-        <forum class="signUpForm" action="signup" method="POST">
+      <div class="signUpShow hidden">
+        <form class="signUpForm" action="signup" method="POST">
           <div class="signUpDiv">
             <div class="pSignUp">Sign up</div>
             <div class="fName-username">
               <div>
                 <label for="firstName">First name</label>
-                <input name="fName">
+                <input name="fName" />
               </div>
               <div>
                 <label for="username">Username</label>
-                <input name="username">
+                <input name="username" />
               </div>
             </div>
-            <div clas="email">
+            <div class="email">
               <label for="email">Email</label>
-              <input name="email" type="email">
+              <input name="email" type="email" />
             </div>
             <div class="password">
               <div>
                 <label for="password">Password</label>
-                <input name="password">
+                <input name="password" />
               </div>
               <div>
                 <label>Confirm password</label>
-                <input name="confirmPassword">
+                <input name="confirmPassword" />
               </div>
             </div>
             <div>
               <button>SIGN UP</button>
             </div>
           </div>
-        </forum>
+        </form>
       </div>
-      <div class="loginShow">
+      <div class="loginShow hidden">
         <h1>Already have an account?</h1>
-        <button onclick="showLogin()">login</button>
+        <button type="button" onclick="showLogin()">login</button>
       </div>
       <div class="backgroundColor"></div>
     </div>
   </body>
+  <script>
+    function showSignUp() {
+      const logInDiv = document.querySelector(".login");
+      const signUpDiv = document.querySelector(".signUp");
+      logInDiv.classList.add("hidden");
+      signUpDiv.classList.add("hidden");
+
+      const signupForm = document.querySelector(".signUpShow");
+      const loginPrompt = document.querySelector(".loginShow");
+      signUpForm.classList.remove("hidden");
+      loginPrompt.classList.remove("hidden");
+      console.log(signupForm, loginPrompt);
+    }
+
+    function showLogin() {
+      const signUpForm = document.querySelector(".signUpShow");
+      const loginPrompt = document.querySelector(".loginShow");
+
+      signUpForm.classList.add("hidden");
+      loginPrompt.classList.add("hidden");
+
+      const loginDiv = document.querySelector(".login");
+      const signUpPrompt = document.querySelector(".signUp");
+      loginDiv.classList.remove("hidden");
+      signUpPrompt.classList.remove("hidden");
+    }
+  </script>
 </html>

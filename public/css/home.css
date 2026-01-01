@@ -12,7 +12,8 @@
 .mainDiv,
 .nav,
 .underTitle,
-.mainBody {
+.mainBody,
+.anon {
   display: flex;
 }
 
@@ -24,12 +25,14 @@
 }
 
 .mainDiv,
-.nav {
+.nav,
+.anon {
   flex-direction: column;
 }
 
 .nav,
-.mainBody {
+.mainBody,
+.anon {
   justify-content: center;
   align-items: center;
 }
@@ -58,6 +61,29 @@
 }
 
 .backgroundColor {
+  height: 70%;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+.title {
+  height: 20%;
+}
+
+.bodyText {
   height: 80%;
-  border-radius: 5%;
+}
+
+.divider {
+  border: 1px solid rgb(179, 179, 179);
+}
+
+.anonText {
+  font-size: 1.2rem;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
 }

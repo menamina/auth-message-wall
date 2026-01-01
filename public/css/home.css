@@ -46,10 +46,8 @@
 }
 
 .nav {
-  padding-left: 25px;
-  padding-right: 25px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
   width: 100%;
   height: 200px;
 }
@@ -69,14 +67,19 @@
 }
 
 .underTitle {
-  position: relative;
   width: 100%;
+  max-width: 100%;
   height: 30%;
 }
 
+.welc {
+  width: 55%;
+  text-align: end;
+}
+
 .login-signUp {
-  position: absolute;
-  transform: translateX(100%);
+  width: 45%;
+  text-align: end;
 }
 
 .individualMsgs {

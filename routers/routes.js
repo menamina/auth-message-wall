@@ -12,7 +12,7 @@ router.post(
   "/login",
   passport.authenticate(`local`, {
     successRedirect: "/",
-    failureRedirect: "/login_signup",
+    failureRedirect: "/login-signup",
   })
 );
 

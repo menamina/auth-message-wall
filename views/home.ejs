@@ -9,12 +9,10 @@
         <div class="titleDivider">
           <p class="digitalCafe">digital</p>
         </div>
-        <div>
          <% if (loggedIn && isMember){ %>
           <div class="underTitle">
             <div>hi, <%= user.fName %> </div>
             <form action="/logout" method="POST"><button>log out</button></forum>
-          </div>
           <div>
             <a href="/new-message">add a message</a>
           </div>
@@ -39,6 +37,7 @@
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
+                                <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>
@@ -65,6 +64,7 @@
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
+                                 <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>
@@ -81,6 +81,7 @@
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">
                                 <div class="title"><%= msg.title %></div>
+                                 <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
                             </div>
                             <div class="divider"></div>

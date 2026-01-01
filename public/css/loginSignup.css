@@ -7,17 +7,23 @@
 .mainDiv {
   height: 100vh;
   width: 100vw;
+  max-height: 100vh;
+  max-width: 100vw;
 }
 
 .mainDiv,
 .login,
 .signUp,
+.signUpShow,
+.loginShow,
 form {
   display: flex;
 }
 
 .login,
 .signUp,
+.signUpShow,
+.loginShow,
 form {
   flex-direction: column;
 }
@@ -27,10 +33,11 @@ form {
 }
 
 .login,
-.signUp {
+.signUp,
+.signUpShow,
+.loginShow {
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .login,
@@ -38,6 +45,11 @@ form {
 .signUpShow,
 .loginShow {
   width: 100%;
+  height: 100%;
+}
+
+.welcome {
+  height: 100px;
 }
 
 .signUp {
@@ -57,7 +69,10 @@ input:focus {
 }
 
 .email,
-.password {
+.password,
+.name,
+.confirmPassword,
+.username {
   border: none;
   height: 50px;
   background-color: rgb(227, 227, 227);
@@ -69,17 +84,25 @@ input:focus {
   padding-top: 40px;
 }
 
+.btn.log,
 .btn.sign {
   height: 40px;
   border-radius: 20px;
   width: 150px;
   align-self: center;
   border: none;
-  background-color: rgb(195, 193, 248);
   cursor: pointer;
+}
+
+.btn.log {
+  background-color: rgb(195, 193, 248);
   margin-top: 20px;
 }
 
-.welcome {
-  height: 100px;
+.dontAlrd {
+  padding-bottom: 130px;
+}
+
+.signUpDiv {
+  height: 400px;
 }

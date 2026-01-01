@@ -22,45 +22,67 @@
               required
               placeholder="password"
             />
-            <button class="btn sign">LOGIN</button>
+            <button class="btn log">LOGIN</button>
             <div class="forgotPass">Forgot your password?</div>
           </form>
         </div>
       </div>
 
       <div class="signUp">
-        <h1>Don't already have an account?</h1>
-        <button type="button" class="signUpBtn" onclick="showSignUp()">
+        <h1 class="dontAlrd">Don't already have an account?</h1>
+        <button
+          class="btn sign"
+          type="button"
+          class="signUpBtn"
+          onclick="showSignUp()"
+        >
           sign up!
         </button>
       </div>
 
       <div class="signUpShow hidden">
-        <form class="signUpForm" action="signup" method="POST">
+        <form class=".form .signUp" action="signup" method="POST">
           <div class="signUpDiv">
             <div class="pSignUp">Sign up</div>
             <div class="fName-username">
               <div>
-                <label for="firstName">First name</label>
-                <input name="fName" />
+                <label for="firstName" hidden>First name</label>
+                <input class="name" name="fName" placeholder="First name" />
               </div>
               <div>
-                <label for="username">Username</label>
-                <input name="username" />
+                <label for="username" hidden>Username</label>
+                <input
+                  class="username"
+                  name="username"
+                  placeholder="Username"
+                />
               </div>
             </div>
             <div class="email">
-              <label for="email">Email</label>
-              <input name="email" type="email" />
+              <label for="email" hidden>Email</label>
+              <input
+                class="email"
+                name="email"
+                type="email"
+                placeholder="Email"
+              />
             </div>
             <div class="password">
               <div>
-                <label for="password">Password</label>
-                <input name="password" />
+                <label for="password" hidden>Password</label>
+                <input
+                  class="password"
+                  name="password"
+                  placeholder="Password"
+                />
               </div>
               <div>
-                <label>Confirm password</label>
-                <input name="confirmPassword" />
+                <label for="confirmPassword" hidden>Confirm password</label>
+                <input
+                  class="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                />
               </div>
             </div>
             <div>

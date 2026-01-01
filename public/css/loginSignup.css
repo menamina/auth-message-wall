@@ -55,10 +55,6 @@ form {
   height: 100px;
 }
 
-/* .signUp {
-  background-color: rgb(195, 193, 248);
-} */
-
 .form,
 .signUpDiv {
   width: 370px;
@@ -103,7 +99,7 @@ input:focus {
 
 .btn.log,
 .registerBtn {
-  background-color: rgb(195, 193, 248);
+  background-color: rgb(100, 201, 208);
   margin-top: 20px;
 }
 
@@ -120,7 +116,11 @@ input:focus {
   position: absolute;
   z-index: -1;
   transform: translateX(100%);
-  background-color: rgb(195, 193, 248);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(105, 199, 236),
+    rgb(20, 58, 162)
+  );
   height: 100%;
   width: 50%;
 }

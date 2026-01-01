@@ -22,6 +22,7 @@
   grid-template-columns: repeat(5, 345px);
   grid-template-rows: repeat(3, 250px);
   gap: 12px;
+  margin-top: 20px;
 }
 
 .mainDiv,
@@ -37,18 +38,32 @@
   align-items: center;
 }
 
+.individualMsgs {
+  height: 100%;
+  width: 100%;
+}
+
 .nav,
 .underTitle {
   width: 100%;
 }
 
 .nav {
-  height: 125px;
+  height: 155px;
+}
+
+.digitalCafe {
+  font-size: 3rem;
+  font-style: italic;
 }
 
 .titleDivider {
   text-align: center;
   height: 70%;
+}
+
+.anon {
+  height: 30%;
 }
 
 .underTitle {
@@ -64,10 +79,13 @@
   height: 70%;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .title {
   height: 20%;
+  font-size: 1.5rem;
 }
 
 .bodyText {

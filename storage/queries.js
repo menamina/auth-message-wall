@@ -11,7 +11,7 @@ async function getMsgs() {
   }
 }
 
-async function addUser(fName, username, email, hash, salt, isMember) {
+async function addUser({ fName, username, email, hash, salt, isMember }) {
   try {
     await db.query(
       "INSERT INTO users (fName, username, email, hash, salt, isMember) VALUES ($1, $2, $3, $4, $5, $6)",

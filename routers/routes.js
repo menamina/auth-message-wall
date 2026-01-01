@@ -28,7 +28,7 @@ router.post("/logout", (req, res, next) => {
 router.get("/membership", home.getMembershipView);
 router.post("/membership", home.updateMembership);
 
-router.get("/new-message", home.getNewMsgView);
-router.post("/new-message", home.addNewMsg);
+router.get("/newMessage", home.getNewMsgView);
+router.post("/newMessage", home.addNewMsg);
 
 module.exports = router;

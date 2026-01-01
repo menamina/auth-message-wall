@@ -8,6 +8,7 @@ async function homePageView(req, res) {
       msgs,
       user: req.user ? req.user : null,
     });
+    console.log(req.user);
   } catch (error) {
     res.send(error.message);
   }
@@ -29,9 +30,9 @@ async function signUpController(req, res) {
       salt: salt,
       isMember: false,
     });
-    res.redirect("login_signup");
+    res.redirect("login-signup");
   } catch (error) {
-    res.send(`Error Msg: ${error.message}`);
+    res.send(`${error.message}`);
   }
 }
 

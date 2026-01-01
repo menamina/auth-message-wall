@@ -30,70 +30,52 @@
 
       <div class="signUp">
         <h1 class="dontAlrd">Don't already have an account?</h1>
-        <button
-          class="btn sign"
-          type="button"
-          class="signUpBtn"
-          onclick="showSignUp()"
-        >
+        <button class="btn sign" type="button" onclick="showSignUp()">
           sign up!
         </button>
       </div>
 
+      <div class="loginShow hidden">
+        <h1>Already have an account?</h1>
+        <button type="button" onclick="showLogin()">login</button>
+      </div>
+
       <div class="signUpShow hidden">
-        <form class=".form .signUp" action="signup" method="POST">
+        <form class="formsignUp" action="signup" method="POST">
           <div class="signUpDiv">
             <div class="pSignUp">Sign up</div>
-            <div class="fName-username">
-              <div>
-                <label for="firstName" hidden>First name</label>
-                <input class="name" name="fName" placeholder="First name" />
-              </div>
-              <div>
-                <label for="username" hidden>Username</label>
-                <input
-                  class="username"
-                  name="username"
-                  placeholder="Username"
-                />
-              </div>
+            <div>
+              <label for="firstName" hidden>First name</label>
+              <input class="name" name="fName" placeholder="First name" />
             </div>
-            <div class="email">
-              <label for="email" hidden>Email</label>
+            <div>
+              <label for="username" hidden>Username</label>
+              <input class="username" name="username" placeholder="Username" />
+            </div>
+            <label for="email" hidden>Email</label>
+            <input
+              class="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+            />
+            <div>
+              <label for="password" hidden>Password</label>
+              <input class="password" name="password" placeholder="Password" />
+            </div>
+            <div>
+              <label for="confirmPassword" hidden>Confirm password</label>
               <input
-                class="email"
-                name="email"
-                type="email"
-                placeholder="Email"
+                class="confirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm Password"
               />
-            </div>
-            <div class="password">
-              <div>
-                <label for="password" hidden>Password</label>
-                <input
-                  class="password"
-                  name="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div>
-                <label for="confirmPassword" hidden>Confirm password</label>
-                <input
-                  class="confirmPassword"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                />
-              </div>
             </div>
             <div>
               <button>SIGN UP</button>
             </div>
           </div>
         </form>
-      </div>
-      <div class="loginShow hidden">
-        <h1>Already have an account?</h1>
-        <button type="button" onclick="showLogin()">login</button>
       </div>
       <div class="backgroundColor"></div>
     </div>
@@ -109,7 +91,6 @@
       const loginPrompt = document.querySelector(".loginShow");
       signUpForm.classList.remove("hidden");
       loginPrompt.classList.remove("hidden");
-      console.log(signupForm, loginPrompt);
     }
 
     function showLogin() {

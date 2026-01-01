@@ -16,6 +16,7 @@
 .signUp,
 .signUpShow,
 .loginShow,
+.signUpDiv,
 form {
   display: flex;
 }
@@ -24,6 +25,7 @@ form {
 .signUp,
 .signUpShow,
 .loginShow,
+.signUpDiv,
 form {
   flex-direction: column;
 }
@@ -56,11 +58,13 @@ form {
   background-color: rgb(195, 193, 248);
 }
 
-.form {
+.form,
+.signUpForm {
   width: 370px;
 }
 
-form {
+form,
+.signUpDiv {
   gap: 13px;
 }
 

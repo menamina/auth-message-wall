@@ -45,7 +45,7 @@ async function updateMembership(req, res) {
     await db.updateMembership(req.user.id);
     res.redirect("/home");
   } catch (error) {
-    res.render("memebrship", {
+    res.render("membership", {
       error: error.message,
     });
   }

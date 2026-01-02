@@ -54,22 +54,35 @@
 
 .digitalCafe {
   font-size: 3rem;
+}
+
+.digitalCafe,
+.becomeMemberBlurb > a {
   font-style: italic;
 }
 
+.becomeMemberBlurb > div {
+  margin-bottom: 13px;
+}
+
+.becomeMemberBlurb,
 .titleDivider {
   text-align: center;
+}
+
+.titleDivider {
   height: 70%;
 }
 
-.anon {
-  height: 30%;
+.newMsg {
+  padding-top: 10px;
 }
 
 .underTitle {
   width: 100%;
   max-width: 100%;
   height: 30%;
+  justify-content: space-between;
 }
 
 .welc {
@@ -110,8 +123,16 @@
   border: 1px solid rgb(179, 179, 179);
 }
 
+.anon {
+  height: 30%;
+}
+
 .anonText {
   font-size: 1.2rem;
+}
+
+.dotDivider {
+  border: 1px dotted black;
 }
 
 a,
@@ -120,6 +141,6 @@ a:visited {
   color: black;
 }
 
-.dotDivider {
-  border: 1px dotted black;
+.btn {
+  cursor: pointer;
 }

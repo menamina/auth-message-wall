@@ -7,7 +7,9 @@
       <div class="bg1"></div>
       <div class="bg2"></div>
       <div class="membershipDiv">
-        <div class="text">Membership</div>
+        <div class="text">
+          <div>Membership</div>
+        </div>
         <% if (error) { %>
         <div class="error">
           <div><%= error %></div>
@@ -17,23 +19,23 @@
           <div>
             <div>Free</div>
             <div>blurb</div>
-            <forum action="/membership" method="POST">
+            <form action="/membership" method="POST">
               <button>sign up</button>
-            </forum>
+            </form>
           </div>
           <div>
             <div>Free</div>
             <div>blurb</div>
-            <forum action="/membership" method="POST">
+            <form action="/membership" method="POST">
               <button>sign up</button>
-            </forum>
+            </form>
           </div>
           <div>
             <div>Free</div>
             <div>blurb</div>
-            <forum action="/membership" method="POST">
+            <form action="/membership" method="POST">
               <button>sign up</button>
-            </forum>
+            </form>
           </div>
         </div>
       </div>

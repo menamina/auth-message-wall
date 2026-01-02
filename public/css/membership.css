@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mainDiv,
+.membershipDiv,
+.text {
+  display: flex;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+}
+
+.membershipDiv {
+  flex-direction: column;
+}
+
+.mainDiv {
+  justify-content: center;
+}
+
+/* flex + grid above */
+
+.mainDiv {
+  height: 100vh;
+  width: 100vw;
+}
+
+.membership {
+  width: 100%;
+}
+
+.text {
+  width: 100%;
+}
+
+.text {
+  height: 30%;
+}
+
+.options {
+  height: 70%;
+}
+
+.mainDiv {
+  position: relative;
+}
+
+.bg1,
+.bg2 {
+  position: absolute;
+  z-index: -1;
+}
+
+.bg1,
+.bg2 {
+  height: 50%;
+}
+
+/* positioning + WxH above */
+
+.text > div {
+  align-self: center;
+}

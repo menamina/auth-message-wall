@@ -37,7 +37,9 @@ async function signUpController(req, res) {
 }
 
 function getMembershipView(req, res) {
-  res.render("memebership");
+  res.render("membership", {
+    error: null,
+  });
 }
 
 async function updateMembership(req, res) {

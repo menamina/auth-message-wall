@@ -22,7 +22,9 @@ async function homePageView(req, res) {
 async function loginSignUp(req, res) {
   res.render("login_signup", {
     errors: null,
+    loginErrors: req.session.messages || [],
   });
+  req.session.messages = [];
 }
 
 async function signUpController(req, res) {
@@ -39,7 +41,7 @@ async function signUpController(req, res) {
     });
     res.redirect("/login-signup");
   } catch (error) {
-    res.render("login-signup", {
+    res.render("login_signup", {
       errors: [{ msg: error.message }],
     });
   }

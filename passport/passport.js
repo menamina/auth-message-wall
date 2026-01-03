@@ -7,11 +7,11 @@ function verifyCB(email, password, done) {
   db.findUserByEmail(email)
     .then((user) => {
       if (!user) {
-        return done(null, false);
+        return done(null, false, { message: "Invalid email or password" });
       }
       const isValid = validatePassword(password, user.hash, user.salt);
       if (!isValid) {
-        return done(null, false);
+        return done(null, false, { message: "Invalid email or password" });
       }
       return done(null, user);
     })

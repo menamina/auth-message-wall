@@ -6,6 +6,13 @@
     <div class="mainDiv">
       <div class="login">
         <h1 class="welcome">welcome back!</h1>
+        <% if (loginErrors && loginErrors.length) { %>
+        <ul class="errors">
+          <% loginErrors.forEach(msg => { %>
+          <li><%= msg %></li>
+          <% }) %>
+        </ul>
+        <% } %>
         <div class="form">
           <form action="/login" method="POST">
             <input
@@ -136,6 +143,11 @@
       const backgroundColor = document.querySelector(".backgroundColor");
       backgroundColor.classList.remove("slideLeft");
       backgroundColor.classList.add("slideRight");
+    }
+
+    const hasErrors = <%= errors && errors.length ? 'true' : 'false' %>;
+    if (hasErrors) {
+      showSignUp();
     }
   </script>
 </html>

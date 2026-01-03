@@ -29,11 +29,18 @@ form {
   background-image: url("../imgs/stars.jpg");
 }
 
+.msgParentDiv > div:first-child {
+  font-size: 3rem;
+}
+
 .msgParentDiv {
   border: 1px solid rgb(164, 122, 211);
   border-radius: 10px;
   padding: 10px;
   box-shadow: -10px 10px 15px 0px rgb(92, 92, 92);
+  min-width: 50%;
+  min-height: 50%;
+  gap: 50px;
 }
 
 .btn {
@@ -45,6 +52,7 @@ form {
   cursor: pointer;
   background: none;
   border: 2px solid rgb(87, 58, 104);
+  margin-top: 35px;
 }
 
 .btn:hover {

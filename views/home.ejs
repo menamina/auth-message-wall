@@ -15,7 +15,7 @@
             <form class="btn" action="/logout" method="POST"><button>log out</button></form>
           </div>
           <div class="newMsg">
-            <a href="/newMessage">+ new message</a>
+            <a href="/new-message">+ new message</a>
           </div>
          <% } else if (loggedIn && !isMember) { %>
             <div class="underTitle">
@@ -27,7 +27,7 @@
               <a href="/membership">&#9734; become a member! &#9734;</a>
             </div>
             <div class="newMsg">
-              <a href="/newMessage">+ new message</a>
+              <a href="/new-message">+ new message</a>
             </div>
          <%  }  else { %>
           <div class="underTitle">
@@ -42,7 +42,7 @@
                 <div class="grids">
                     <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
-                            <div class="backgroundColor" style="background: <%= msg.color %>">
+                            <div class="backgroundColor">
                                 <div class="title"><%= msg.title %></div>
                                 <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
@@ -60,7 +60,7 @@
                 <div class="frids">
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
-                            <div class="backgroundColor" style="background: <%= msg.color %>">
+                            <div class="backgroundColor">
                                 <div class="title"><%= msg.title %></div>
                                  <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
@@ -77,7 +77,7 @@
               <div class="grids">
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
-                            <div class="backgroundColor" style="background: <%= msg.color %>">
+                            <div class="backgroundColor">
                                 <div class="title"><%= msg.title %></div>
                                  <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>

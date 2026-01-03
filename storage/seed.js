@@ -18,8 +18,7 @@ CREATE TABLE IF NOT EXISTS messages (
     user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     title TEXT,
     body TEXT,
-    posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    color TEXT NOT NULL
+    posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO users (fName, username, email, hash, salt, isMember)
@@ -31,14 +30,14 @@ VALUES
     ('Paris', 'baguette', 'odin4@project.com', 'abc-123-hash', '123', TRUE),
     ('Dakota', 'browniesRgood', 'odin5@project.com', 'abc-123-hash', '123', TRUE);
 
-INSERT INTO messages (user_id, title, body, color)
+INSERT INTO messages (user_id, title, body)
 VALUES
-    (1, 'remember...', 'fake news fake news', '#bcceffff'),
-    (2, 'that..', 'fake news fake news', '#ffe7bcff'),
-    (3, 'u..', 'fake news fake news', '#bdfdfeff'),
-    (4, 'r..', 'fake news fake news', '#ffd4dbff'),
-    (5, 'v..', 'fake news fake news', '#e3bdfeff'),
-    (6, 'cool', 'fake news fake news', '#87f0bfff');
+    (1, 'remember...', 'fake news fake news'),
+    (2, 'that..', 'fake news fake news'),
+    (3, 'u..', 'fake news fake news'),
+    (4, 'r..', 'fake news fake news'),
+    (5, 'v..', 'fake news fake news'),
+    (6, 'cool', 'fake news fake news');
 `;
 
 async function run() {

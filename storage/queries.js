@@ -3,7 +3,7 @@ const db = require("./pool");
 async function getMsgs() {
   try {
     const msgs = await db.query(
-      "SELECT messages.title, messages.body, messages.color, messages.posted, users.username, users.fName FROM messages LEFT JOIN users ON messages.user_id = users.id ORDER BY messages.posted DESC"
+      "SELECT messages.title, messages.body, messages.posted, users.username, users.fName FROM messages LEFT JOIN users ON messages.user_id = users.id ORDER BY messages.posted DESC"
     );
     return msgs.rows;
   } catch (error) {
@@ -63,7 +63,7 @@ async function updateMembership(userID) {
 async function addNewMsg(id, title, body) {
   try {
     db.query(
-      "INSERT INTO messages (title, body) VALUES ($1, $2) WHERE id = $3",
+      "INSERT INTO messages (title, body) VALUES ($1, $2) WHERE user_id = $3",
       [title, body, id]
     );
   } catch (error) {

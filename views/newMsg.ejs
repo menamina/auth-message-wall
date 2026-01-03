@@ -21,52 +21,17 @@
           </div>
           <div>
             <label for="body" hidden></label>
-            <textarea
+            <input
               class="body"
               name="body"
-              placeholder="what would you like
-              to say to the world?"
-            >
-            </textarea>
-          </div>
-          <div>
-            <label>background color for your msg?</label>
-            <div class="colorPicker"></div>
-            <input hidden name="color" class="colorInput" />
+              placeholder="what would you like to say to the world?"
+            />
           </div>
           <button class="btn">publish</button>
         </form>
-        <a href="/">cancel</a>
+        <a class="cancel" href="/">cancel</a>
       </div>
       <%}%>
     </div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-  <script>
-    const pickerEl = document.querySelector(".colorPicker");
-    const colorInput = document.querySelector(".colorInput");
-    const picker = Pickr.create({
-      el: pickerEl,
-      theme: "classic",
-
-      default: "#ffffffcc",
-
-      components: {
-        preview: true,
-        opacity: true,
-        hue: true,
-
-        interaction: {
-          input: true,
-          save: true,
-        },
-      },
-    });
-
-    picker.on("save", (color) => {
-      const rgbaHex = color.toHEXA().toString();
-      colorInput.value = rgbaHex;
-      picker.hide();
-    });
-  </script>
 </html>

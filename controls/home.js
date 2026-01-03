@@ -59,8 +59,7 @@ async function updateMembership(req, res) {
 }
 
 function getNewMsgView(req, res) {
-  const username = req.username;
-  res.render("newMsg", { username });
+  res.render("newMsg");
 }
 
 async function addNewMsg(req, res) {

@@ -23,6 +23,10 @@ form {
   align-items: center;
 }
 
+form {
+  gap: 10px;
+}
+
 .mainDiv {
   height: 100vh;
   width: 100vw;
@@ -38,17 +42,30 @@ form {
   border-radius: 10px;
   padding: 10px;
   box-shadow: -10px 10px 15px 0px rgb(92, 92, 92);
-  min-width: 50%;
-  min-height: 50%;
+  min-width: 30%;
+  max-height: 100%;
   gap: 50px;
+}
+
+.title,
+.body {
+  color: black;
+  border-radius: 10px;
+  width: 360;
+}
+
+.title {
+  height: 30px;
+}
+
+.body {
+  height: 150px;
 }
 
 .btn {
   height: 40px;
   border-radius: 20px;
   width: 170px;
-  align-self: center;
-  border: none;
   cursor: pointer;
   background: none;
   border: 2px solid rgb(87, 58, 104);
@@ -57,6 +74,16 @@ form {
 
 .btn:hover {
   box-shadow: 0 0 20px 0px rgb(92, 92, 92);
+}
+
+.cancel {
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid rgb(61, 61, 61);
+  width: 170px;
+  cursor: pointer;
+  justify-self: center;
+  text-align: center;
 }
 
 a,

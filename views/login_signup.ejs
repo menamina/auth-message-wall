@@ -43,6 +43,13 @@
       </div>
 
       <div class="signUpShow hidden">
+        <% if (errors && errors.length) { %>
+        <ul class="errors">
+          <% errors.forEach(err => { %>
+          <li><%= err.msg %></li>
+          <% }) %>
+        </ul>
+        <% } %>
         <form class="formsignUp" action="/signup" method="POST">
           <div class="signUpDiv">
             <div class="pSignUp">Sign up</div>

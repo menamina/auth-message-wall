@@ -20,7 +20,9 @@ async function homePageView(req, res) {
 }
 
 async function loginSignUp(req, res) {
-  res.render("login_signup");
+  res.render("login_signup", {
+    errors: null,
+  });
 }
 
 async function signUpController(req, res) {
@@ -35,9 +37,11 @@ async function signUpController(req, res) {
       salt: salt,
       isMember: false,
     });
-    res.redirect("login-signup");
+    res.redirect("/login-signup");
   } catch (error) {
-    res.send(`${error.message}`);
+    res.render("login-signup", {
+      errors: [{ msg: error.message }],
+    });
   }
 }
 

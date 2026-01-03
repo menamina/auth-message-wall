@@ -5,11 +5,20 @@
   color: white;
 }
 
-.mainDiv {
+.mainDiv,
+.msgParentDiv,
+form {
   display: flex;
 }
 
-.mainDiv {
+.msgParentDiv,
+form {
+  flex-direction: column;
+}
+
+.mainDiv,
+.msgParentDiv,
+form {
   justify-content: center;
   align-items: center;
 }
@@ -18,6 +27,28 @@
   height: 100vh;
   width: 100vw;
   background-image: url("../imgs/stars.jpg");
+}
+
+.msgParentDiv {
+  border: 1px solid rgb(164, 122, 211);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: -10px 10px 15px 0px rgb(92, 92, 92);
+}
+
+.btn {
+  height: 40px;
+  border-radius: 20px;
+  width: 170px;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: 2px solid rgb(87, 58, 104);
+}
+
+.btn:hover {
+  box-shadow: 0 0 20px 0px rgb(92, 92, 92);
 }
 
 a,

@@ -17,13 +17,20 @@
         <form class="newMsgForm" action="/new-message" method="POST">
           <div>
             <label for="title" hidden></label>
-            <input name="title" placeholder="title" />
+            <input
+              class="title"
+              name="title"
+              placeholder="title"
+              type="range"
+            />
           </div>
           <div>
             <label for="body" hidden></label>
             <input
+              class="body"
               name="body"
               placeholder="what would you like to say to the world?"
+              type="range"
             />
           </div>
           <div>
@@ -31,7 +38,7 @@
             <div class="colorPicker"></div>
             <input hidden name="color" class="colorInput" />
           </div>
-          <button>publish</button>
+          <button class="btn">publish</button>
         </form>
         <a href="/">cancel</a>
       </div>

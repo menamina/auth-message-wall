@@ -60,10 +60,22 @@ async function updateMembership(userID) {
   }
 }
 
+async function addNewMsg(id, title, body) {
+  try {
+    db.query(
+      "INSERT INTO messages (title, body) VALUES ($1, $2) WHERE id = $3",
+      [title, body, id]
+    );
+  } catch (error) {
+    throw new Error(`sql err @ addNewMsg() w msg: ${error.message}`);
+  }
+}
+
 module.exports = {
   getMsgs,
   addUser,
   updateMembership,
   findUserByEmail,
   findUserByID,
+  addNewMsg,
 };

@@ -63,7 +63,16 @@ function getNewMsgView(req, res) {
   res.render("newMsg", { username });
 }
 
-async function addNewMsg(req, res) {}
+async function addNewMsg(req, res) {
+  const { id } = req.user.id;
+  const { title, body } = req.body;
+  try {
+    await db.addNewMsg(id, title, body);
+    res.redirect("/");
+  } catch (error) {
+    throw new Error(`controller err @ addNewMsg() w msg: ${error.message}`);
+  }
+}
 
 module.exports = {
   homePageView,

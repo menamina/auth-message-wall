@@ -63,7 +63,7 @@ function getNewMsgView(req, res) {
 }
 
 async function addNewMsg(req, res) {
-  const { id } = req.user.id;
+  const id = req.user.id;
   const { title, body } = req.body;
   try {
     await db.addNewMsg(id, title, body);

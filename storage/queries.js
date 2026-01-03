@@ -62,9 +62,9 @@ async function updateMembership(userID) {
 
 async function addNewMsg(id, title, body) {
   try {
-    db.query(
-      "INSERT INTO messages (title, body) VALUES ($1, $2) WHERE user_id = $3",
-      [title, body, id]
+    await db.query(
+      "INSERT INTO messages (user_id, title, body) VALUES ($1, $2, $3)",
+      [id, title, body]
     );
   } catch (error) {
     throw new Error(`sql err @ addNewMsg() w msg: ${error.message}`);

@@ -73,6 +73,8 @@ async function addNewMsg(req, res) {
   }
 }
 
+async function deleteMsg(req, res) {}
+
 module.exports = {
   homePageView,
   loginSignUp,
@@ -81,4 +83,5 @@ module.exports = {
   updateMembership,
   getNewMsgView,
   addNewMsg,
+  deleteMsg,
 };

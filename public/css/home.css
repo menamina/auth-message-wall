@@ -15,7 +15,8 @@
 .nav,
 .underTitle,
 .mainBody,
-.anon {
+.anon,
+.title {
   display: flex;
 }
 
@@ -38,6 +39,10 @@
 .anon {
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  justify-content: space-between;
 }
 
 .individualMsgs {
@@ -66,7 +71,8 @@
 }
 
 .becomeMemberBlurb,
-.titleDivider {
+.titleDivider,
+.deleteBtn {
   text-align: center;
 }
 
@@ -141,6 +147,15 @@ a:visited {
   color: black;
 }
 
-.btn {
+.btn,
+.deleteBtn {
   cursor: pointer;
+}
+
+.deleteBtn {
+  background: none;
+  border: 1px solid gray;
+  width: 25px;
+  height: 25px;
+  border-radius: 2px;
 }

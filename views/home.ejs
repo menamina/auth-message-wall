@@ -43,7 +43,12 @@
                     <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor">
-                                <div class="title"><%= msg.title %></div>
+                                <div class="title">
+                                  <div><%= msg.title %></div>
+                                  <% if (msg.user_id === user.id) { %>
+                                      <form action="/delete" method="POST"><button class="deleteBtn">x</button></form>
+                                  <% } %>
+                                </div>
                                 <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
                             </div>

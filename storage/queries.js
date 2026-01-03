@@ -46,7 +46,7 @@ async function findUserByID(id) {
 
 async function updateMembership(userID) {
   try {
-    const { canUpdate } = await db.query(
+    const canUpdate = await db.query(
       "UPDATE users SET isMember = true WHERE id = $1",
       [userID]
     );

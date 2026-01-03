@@ -99,13 +99,15 @@ input:focus {
 
 .btn.log,
 .registerBtn {
-  background-color: rgb(100, 201, 208);
+  background-color: rgb(0, 0, 0);
   margin-top: 20px;
+  color: white;
 }
 
 .dontAlrd,
 .alrdHave {
   padding-bottom: 130px;
+  color: white;
 }
 
 .signUpDiv {
@@ -116,11 +118,7 @@ input:focus {
   position: absolute;
   z-index: -1;
   transform: translateX(100%);
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(105, 199, 236),
-    rgb(20, 58, 162)
-  );
+  background-image: url("../imgs/golden.jpg");
   height: 100%;
   width: 50%;
 }

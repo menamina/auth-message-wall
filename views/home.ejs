@@ -11,15 +11,16 @@
         </div>
          <% if (loggedIn && isMember){ %>
           <div class="underTitle">
-            <div>hi, <%= user.fName %> &#58;&#41;</div>
-            <form class="btn" action="/logout" method="POST"><button>log out</button></forum>
-          <div>
-            <a href="/new-message">add a message</a>
+            <div>hi, <%= user.fname %> &#58;&#41;</div>
+            <form class="btn" action="/logout" method="POST"><button>log out</button></form>
+          </div>
+          <div class="newMsg">
+            <a href="/newMessage">+ new message</a>
           </div>
          <% } else if (loggedIn && !isMember) { %>
             <div class="underTitle">
               <div>hi, <%= user.fname %> &#58;&#41;</div>
-              <form action="/logout" method="POST"><button class="btn">log out</button></forum>
+              <form action="/logout" method="POST"><button class="btn">log out</button></form>
             </div>
             <div class="becomeMemberBlurb">
               <div>curious about who posted what and when?</div>
@@ -38,7 +39,7 @@
       </nav>
       <div class="mainBody">
             <% if (loggedIn && isMember) { %>
-                <div class="isMemberGrids">
+                <div class="grids">
                     <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">
@@ -48,15 +49,15 @@
                             </div>
                             <div class="divider"></div>
                             <div>
-                                <p><%= msg.fName %></p>
+                                <p><%= msg.fname %></p>
                                 <p>@<%= msg.username %> </p>
                             </div>
-                            <div><%= msg.posted %></div>
+                            <div><%= msg.postedDate %></div>
                         </div>
                     <% }) %>
                 </div>
             <% } else if (loggedIn && !isMember) { %>
-                <div class="nonMemberGrids">
+                <div class="frids">
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">
@@ -73,7 +74,7 @@
                     <% }) %>
                 </div>
             <% } else if (!loggedIn && !isMember) { %>
-              <div class="nonMemberGrids">
+              <div class="grids">
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor" style="background: <%= msg.color %>">

@@ -19,7 +19,7 @@
   display: flex;
 }
 
-.nonMemberGrids {
+.grids {
   display: grid;
   grid-template-columns: repeat(5, 345px);
   grid-template-rows: repeat(3, 250px);

@@ -4,11 +4,14 @@ const { generatePassword } = require("../middleware/passwordUtil");
 async function homePageView(req, res) {
   try {
     const msgs = await db.getMsgs();
-    msgs.forEach((msg) => (msg.postedDate = msg.posted.split("T")[0]));
+    msgs.forEach((msg) => {
+      const slashDate = msg.posted.toLocaleDateString();
+      const dotDate = slashDate.replaceAll("/", ".");
+      msg.postedDate = dotDate;
+    });
     res.render("home", {
       msgs,
       user: req.user ? req.user : null,
-      dateTrimmed,
     });
     console.log(req.user);
   } catch (error) {

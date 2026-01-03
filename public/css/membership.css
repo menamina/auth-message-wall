@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 .mainDiv,
@@ -18,14 +19,11 @@ form > div {
   gap: 20px;
 }
 
+.mainDiv,
 .membershipDiv,
 .free,
 form > div {
   flex-direction: column;
-}
-
-.mainDiv {
-  justify-content: center;
 }
 
 .free {
@@ -35,6 +33,7 @@ form > div {
 .free {
   justify-content: space-around;
 }
+
 .membershipDiv,
 .text,
 form > div {
@@ -80,6 +79,7 @@ form > div {
 .bg1,
 .bg2 {
   height: 50%;
+  width: 100%;
 }
 
 /* positioning + WxH above */
@@ -92,7 +92,8 @@ form > div {
 .free {
   border: 1px solid rgb(164, 122, 211);
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
+  box-shadow: -10px 10px 15px 0px rgb(92, 92, 92);
 }
 
 .btn {
@@ -117,4 +118,17 @@ form > div {
 
 form > div {
   margin-bottom: 40px;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+.bg1 {
+  background-image: url("../imgs/stars.jpg");
+}
+
+.bg2 {
+  background-image: url("../imgs/golden.jpg");
+  bottom: 0;
 }

@@ -7,18 +7,20 @@
 .mainDiv,
 .membershipDiv,
 .text,
-.free {
+.free,
+form > div {
   display: flex;
 }
 
 .options {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
+  grid-template-columns: repeat(3, 300px);
   gap: 20px;
 }
 
 .membershipDiv,
-.free {
+.free,
+form > div {
   flex-direction: column;
 }
 
@@ -34,7 +36,8 @@
   justify-content: space-around;
 }
 .membershipDiv,
-.text {
+.text,
+form > div {
   justify-content: center;
   align-items: center;
 }
@@ -83,20 +86,35 @@
 
 .text > div {
   align-self: center;
+  font-size: 3rem;
 }
 
 .free {
   border: 1px solid rgb(164, 122, 211);
   border-radius: 10px;
+  padding: 20px;
 }
 
 .btn {
   height: 40px;
   border-radius: 20px;
-  width: 150px;
+  width: 170px;
   align-self: center;
   border: none;
   cursor: pointer;
   background: none;
   border: 2px solid rgb(87, 58, 104);
+}
+
+.blurb {
+  text-align: center;
+}
+
+.free > div:first-child {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+form > div {
+  margin-bottom: 40px;
 }

@@ -8,7 +8,7 @@
       <div class="bg2"></div>
       <div class="membershipDiv">
         <div class="text">
-          <div>Membership</div>
+          <div>Membership Options</div>
         </div>
         <% if (error) { %>
         <div class="error">
@@ -17,8 +17,8 @@
         <% } %>
         <div class="options">
           <div class="free">
-            <div>Free</div>
-            <div>
+            <div>Basic</div>
+            <div class="blurb">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
               <br />
               consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
@@ -26,12 +26,16 @@
               quisque faucibus ex sapien vitae pellentesque.
             </div>
             <form action="/membership" method="POST">
-              <button class="btn">sign up</button>
+              <div>
+                <p>$0.00</p>
+                <p>per month</p>
+              </div>
+              <button class="btn">SELECT</button>
             </form>
           </div>
           <div class="free">
-            <div>Free</div>
-            <div>
+            <div>Standard</div>
+            <div class="blurb">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
               <br />
               consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
@@ -39,12 +43,16 @@
               quisque faucibus ex sapien vitae pellentesque.
             </div>
             <form action="/membership" method="POST">
-              <button class="btn">sign up</button>
+              <div>
+                <p>$0.00</p>
+                <p>per month</p>
+              </div>
+              <button class="btn">SELECT</button>
             </form>
           </div>
           <div class="free">
-            <div>Free</div>
-            <div>
+            <div>Premium</div>
+            <div class="blurb">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet
               <br />
               consectetur adipiscing elit quisque faucibus ex. Adipiscing elit
@@ -52,7 +60,11 @@
               quisque faucibus ex sapien vitae pellentesque.
             </div>
             <form action="/membership" method="POST">
-              <button class="btn">sign up</button>
+              <div>
+                <p>$0.00</p>
+                <p>per month</p>
+              </div>
+              <button class="btn">SELECT</button>
             </form>
           </div>
         </div>

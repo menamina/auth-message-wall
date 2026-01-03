@@ -73,7 +73,20 @@ async function addNewMsg(req, res) {
   }
 }
 
-async function deleteMsg(req, res) {}
+async function deleteMsg(req, res) {
+  try {
+    if (!req.user) {
+      return res.status(401).send("Not authorized");
+    }
+
+    const user_id = req.user.id;
+    const msgId = req.body.msgId;
+    await db.deleteMsgSQL(msgId, user_id);
+    res.redirect("/");
+  } catch (error) {
+    throw new Error(`controller error @ deleteMsg() w msg: ${error.message}`);
+  }
+}
 
 module.exports = {
   homePageView,

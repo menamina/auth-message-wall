@@ -46,7 +46,10 @@
                                 <div class="title">
                                   <div><%= msg.title %></div>
                                   <% if (msg.user_id === user.id) { %>
-                                      <form action="/delete" method="POST"><button class="deleteBtn">x</button></form>
+                                      <form action="/delete" method="POST">
+                                        <input hidden name="msgId" value="<%= msg.id%>">
+                                        <button type="submit" name="deleteBtn" class="deleteBtn">x</button>
+                                      </form>
                                   <% } %>
                                 </div>
                                 <div class="dotDivider"></div>

@@ -3,7 +3,7 @@ const db = require("./pool");
 async function getMsgs() {
   try {
     const msgs = await db.query(
-      "SELECT messages.user_id, messages.title, messages.body, messages.posted, users.username, users.fName FROM messages LEFT JOIN users ON messages.user_id = users.id ORDER BY messages.posted DESC"
+      "SELECT messages.id, messages.user_id, messages.title, messages.body, messages.posted, users.username, users.fName FROM messages LEFT JOIN users ON messages.user_id = users.id ORDER BY messages.posted DESC"
     );
     return msgs.rows;
   } catch (error) {
@@ -71,6 +71,17 @@ async function addNewMsg(id, title, body) {
   }
 }
 
+async function deleteMsgSQL(id, user_id) {
+  try {
+    await db.query("DELETE FROM messages WHERE id = $1 AND user_id = $2", [
+      id,
+      user_id,
+    ]);
+  } catch (error) {
+    throw new Error(`sql error @ deleteMsg() w msg: ${error.message}`);
+  }
+}
+
 module.exports = {
   getMsgs,
   addUser,
@@ -78,4 +89,5 @@ module.exports = {
   findUserByEmail,
   findUserByID,
   addNewMsg,
+  deleteMsgSQL,
 };

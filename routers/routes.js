@@ -31,4 +31,6 @@ router.post("/membership", home.updateMembership);
 router.get("/new-message", home.getNewMsgView);
 router.post("/new-message", home.addNewMsg);
 
+router.post("/delete", home.deleteMsg);
+
 module.exports = router;

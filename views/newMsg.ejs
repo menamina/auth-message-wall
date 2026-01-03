@@ -12,15 +12,9 @@
       <div>whomp you must login to add a post</div>
       <a href="/login-signup">login or sign up</a>
       <% } else { %>
-      <div>
+      <div class="msgParentDiv">
         <div>new msg!</div>
-        <form class="newMsgForum" action="/new-message" method="POST">
-          <div>
-            <div><img /></div>
-            <div>
-              <div><%= username %></div>
-            </div>
-          </div>
+        <form class="newMsgForm" action="/new-message" method="POST">
           <div>
             <label for="title" hidden></label>
             <input name="title" placeholder="title" />
@@ -39,6 +33,7 @@
           </div>
           <button>publish</button>
         </form>
+        <a href="/">cancel</a>
       </div>
       <%}%>
     </div>

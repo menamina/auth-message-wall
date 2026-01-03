@@ -2,10 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
+}
+
+.mainDiv {
+  display: flex;
+}
+
+.mainDiv {
+  justify-content: center;
+  align-items: center;
+}
+
+.mainDiv {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../imgs/stars.jpg");
 }
 
 a,
 a:visited {
   text-decoration: none;
-  color: black;
 }

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 .mainDiv {
@@ -9,6 +10,7 @@
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
+  background-image: url("../imgs/stars.jpg");
 }
 
 .mainDiv,
@@ -24,7 +26,7 @@
   display: grid;
   grid-template-columns: repeat(5, 345px);
   grid-template-rows: repeat(3, 250px);
-  gap: 12px;
+  gap: 20px;
   margin-top: 20px;
 }
 
@@ -102,8 +104,13 @@
 }
 
 .individualMsgs {
-  border: 1px solid rgb(179, 179, 179);
+  border: 2px solid rgb(87, 58, 104);
   border-radius: 5%;
+  box-shadow: -5px 5px 15px 0px rgb(92, 92, 92);
+}
+
+.individualMsgs:hover {
+  transform: translateY(-3px);
 }
 
 .backgroundColor {
@@ -126,7 +133,7 @@
 }
 
 .divider {
-  border: 1px solid rgb(179, 179, 179);
+  border: 1px solid rgb(87, 58, 104);
 }
 
 .anon {
@@ -138,13 +145,12 @@
 }
 
 .dotDivider {
-  border: 1px dotted black;
+  border: 1px dotted rgb(87, 58, 104);
 }
 
 a,
 a:visited {
   text-decoration: none;
-  color: black;
 }
 
 .btn,

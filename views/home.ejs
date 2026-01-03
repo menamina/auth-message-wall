@@ -12,7 +12,7 @@
          <% if (loggedIn && isMember){ %>
           <div class="underTitle">
             <div>hi, <%= user.fname %> &#58;&#41;</div>
-            <form class="btn" action="/logout" method="POST"><button>log out</button></form>
+            <form class="btn" action="/logout" method="POST"><button class="btn">log out</button></form>
           </div>
           <div class="newMsg">
             <a href="/new-message">+ new message</a>
@@ -48,7 +48,7 @@
                                   <% if (msg.user_id === user.id) { %>
                                       <form action="/delete" method="POST">
                                         <input hidden name="msgId" value="<%= msg.id%>">
-                                        <button type="submit" name="deleteBtn" class="deleteBtn">x</button>
+                                        <button type="submit" class="deleteBtn">x</button>
                                       </form>
                                   <% } %>
                                 </div>
@@ -69,7 +69,15 @@
                      <% msgs.forEach(msg => { %>
                         <div class="individualMsgs" >
                             <div class="backgroundColor">
-                                <div class="title"><%= msg.title %></div>
+                               <div class="title">
+                                  <div><%= msg.title %></div>
+                                  <% if (msg.user_id === user.id) { %>
+                                      <form action="/delete" method="POST">
+                                        <input hidden name="msgId" value="<%= msg.id%>">
+                                        <button type="submit" class="deleteBtn">x</button>
+                                      </form>
+                                  <% } %>
+                                </div>
                                  <div class="dotDivider"></div>
                                 <div class="bodyText"><%= msg.body %> </div>
                             </div>

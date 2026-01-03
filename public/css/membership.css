@@ -6,21 +6,37 @@
 
 .mainDiv,
 .membershipDiv,
-.text {
+.text,
+.free {
   display: flex;
 }
 
 .options {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template-columns: repeat(3, 250px);
+  gap: 20px;
 }
 
-.membershipDiv {
+.membershipDiv,
+.free {
   flex-direction: column;
 }
 
 .mainDiv {
   justify-content: center;
+}
+
+.free {
+  align-items: center;
+}
+
+.free {
+  justify-content: space-around;
+}
+.membershipDiv,
+.text {
+  justify-content: center;
+  align-items: center;
 }
 
 /* flex + grid above */
@@ -30,8 +46,9 @@
   width: 100vw;
 }
 
-.membership {
+.membershipDiv {
   width: 100%;
+  height: 100%;
 }
 
 .text {
@@ -44,6 +61,7 @@
 
 .options {
   height: 70%;
+  margin-bottom: 300px;
 }
 
 .mainDiv {
@@ -65,4 +83,20 @@
 
 .text > div {
   align-self: center;
+}
+
+.free {
+  border: 1px solid rgb(164, 122, 211);
+  border-radius: 10px;
+}
+
+.btn {
+  height: 40px;
+  border-radius: 20px;
+  width: 150px;
+  align-self: center;
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: 2px solid rgb(87, 58, 104);
 }
